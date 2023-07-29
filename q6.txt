@@ -1,4 +1,64 @@
-Callback hell is a phenomenon that happens when multiple callbacks are nested on top of each other. 
-The two common ways of escaping the callback here are by using promises and async/await.
- Promises mainly have three stages such as resolved, rejected, and pending. It makes 
- the code more maintainable and understandable.
+Callback hell, also known as the pyramid of doom, is a term used to describe a situation in asynchronous programming where multiple nested callbacks are used. This often happens when handling multiple asynchronous operations in sequence, and each operation depends on the result of the previous one. As more operations are added, the code structure becomes deeply nested and challenging to read and maintain.
+
+Here's an example of callback hell in JavaScript:
+
+javascript
+Copy code
+asyncFunc1((result1) => {
+  asyncFunc2(result1, (result2) => {
+    asyncFunc3(result2, (result3) => {
+      // More nested callbacks...
+    });
+  });
+});
+Asynchronous functions like reading files, making HTTP requests, or interacting with databases frequently use callbacks. The deeper the nesting of these callbacks, the harder it becomes to understand the flow of the code.
+
+To solve callback hell, developers have come up with various approaches that make the code more readable and maintainable. Let's explore three popular solutions:
+
+Using named functions:
+Instead of using anonymous functions for callbacks, we can define named functions and pass them as callbacks. This approach makes the code more readable and separates the concerns of each async operation.
+
+javascript
+Copy code
+function onResult1(result1) {
+  asyncFunc2(result1, onResult2);
+}
+
+function onResult2(result2) {
+  asyncFunc3(result2, onResult3);
+}
+
+asyncFunc1(onResult1);
+Using Promises:
+Promises are a built-in feature in modern JavaScript that simplify asynchronous code and avoid callback hell. Promises represent the eventual completion or failure of an asynchronous operation and allow you to chain multiple asynchronous operations together.
+
+javascript
+Copy code
+asyncFunc1()
+  .then((result1) => asyncFunc2(result1))
+  .then((result2) => asyncFunc3(result2))
+  .then((result3) => {
+    // Use the final result here
+  })
+  .catch((error) => {
+    // Handle errors
+  });
+With promises, you can write more linear and readable code, avoiding excessive indentation and nesting.
+
+Using async/await:
+Async/await is a syntax introduced in modern JavaScript that provides a more synchronous-looking code structure for handling asynchronous operations. It builds upon Promises and makes the code even more straightforward to read and understand.
+
+javascript
+Copy code
+async function doAsyncOperations() {
+  try {
+    const result1 = await asyncFunc1();
+    const result2 = await asyncFunc2(result1);
+    const result3 = await asyncFunc3(result2);
+    // Use the final result here
+  } catch (error) {
+    // Handle errors
+  }
+}
+
+doAsyncOperations();
