@@ -1,0 +1,7 @@
+Sharding is a method for distributing data across multiple machines. 
+MongoDB uses sharding to support deployments with very large data sets
+ and high throughput operations. Database systems with large data sets or high 
+ throughput applications can challenge the capacity of a single server. 
+ and Handles horizontal scaling across servers using a shard key. This means
+  that rather than copying data holistically, sharding copies pieces of the data (or “shards”) across 
+  multiple replica sets. These replica sets work together to utilize all of the data.

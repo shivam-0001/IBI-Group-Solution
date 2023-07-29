@@ -1,0 +1,13 @@
+A higher-order component (HOC) is an advanced technique in React for reusing component logic. 
+HOCs are not part of the React API, per se. They are a pattern that emerges from React's compositional nature. 
+Concretely, a higher-order component is a function that takes a component and returns a new component.
+Here's how HOCs work:
+1.Higher-Order Component Definition: Create a function that takes a component as an argument. This function will return a new component that wraps the original component.
+
+2.Inner Component: The original component passed to the HOC is often referred to as the "Inner Component" or the "Wrapped Component." It's the component you want to enhance with additional functionality.
+
+3.Enhanced Component: The new component returned by the HOC is often referred to as the "Enhanced Component" or the "Higher-Order Component." This component includes the logic added by the HOC and can pass additional props to the Inner Component.
+
+4.Props Proxying: The HOC can pass props down to the Inner Component using the spread operator or any other method. This allows the Inner Component to receive both its original props and any new props from the HOC.
+
+5.Reusability: Since the HOC is just a function, you can use it with any component you want to enhance with the same logic.

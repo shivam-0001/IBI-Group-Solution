@@ -1,0 +1,7 @@
+1 4 2 3 console.log(1);: This line will immediately print 1 to the console. 
+ setTimeout(printNumber, 0, 2);: This line sets a timer to call the printNumber function 
+ with the argument 2 after a delay of 0 milliseconds. However, even though the delay is 
+ specified as 0 milliseconds, the setTimeout function is designed to have a minimum delay of 4 milliseconds. 
+ So, the function will be added to the event loop, but it won't be executed immediately.  setTimeout(printNumber, 100, 3);: 
+ This line sets a timer to call the printNumber function with the argument 3 after a delay of 100 milliseconds.
+  This timer will be executed after the previous timer.  console.log(4);: This line will immediately print 4 to the console.

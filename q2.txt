@@ -1,0 +1,2 @@
+5 5 5 5 5 because The reason being is that for loop only exits until the set condition breaks. For the above for loop,
+ it will exit once i = 5. Therefore, i equals 5 when the for loop exits.

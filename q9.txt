@@ -1,0 +1,10 @@
+This line initializes arr1 as an array by splitting the string "john" into individual characters. 
+So, arr1 becomes ["j", "o", "h", "n"].var arr2 = arr1.reverse(); This line assigns arr1 to arr2 
+and then reverses the array arr1 in place. The reverse() method modifies the original array and
+ also returns the reversed array. Therefore, both arr1 and arr2 will point to the same reversed array, 
+ which is ["n", "h", "o", "j"].  var arr3 = "jones".split(''); This line initializes arr3 as an array by
+  splitting the string "jones" into individual characters. So, arr3 becomes ["j", "o", "n", "e", "s"].  
+  arr2.push(arr3); This line pushes the entire arr3 array as a single element to the end of the arr2 array. 
+  After this operation, arr2 will look like ["n", "h", "o", "j", ["j", "o", "n", "e", "s"]]. Note that the last
+   element in arr2 is an array itself.  console.log("array 1: length=" + arr1.length + " last=" + arr1.slice(-1));
+    This line prints information about arr1. arr1.length will be 4, and arr1.slice(-1) will return the last element of arr1

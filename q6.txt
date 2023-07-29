@@ -1,0 +1,4 @@
+Callback hell is a phenomenon that happens when multiple callbacks are nested on top of each other. 
+The two common ways of escaping the callback here are by using promises and async/await.
+ Promises mainly have three stages such as resolved, rejected, and pending. It makes 
+ the code more maintainable and understandable.

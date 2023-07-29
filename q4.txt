@@ -1,0 +1,7 @@
+Promise chaining occurs when the callback function returns a promise. It allows you to chain 
+on another then call which will run when the second promise is fulfilled. Catch can still be called 
+to handle any errors that might occur along the way.
+for ex:_
+let promise = new Promise(function (resolve, reject) {
+   return resolve("Hello I am resolved");
+});
